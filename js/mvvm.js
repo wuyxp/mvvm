@@ -48,7 +48,8 @@ class MVVM {
       Object.keys(computed).forEach(key => {
         Object.defineProperty(me, key, {
           get(){
-            return typeof computed[key] === 'function' ? computed[key] : computed[key].get;
+            const fn = typeof computed[key] === 'function' ? computed[key] : computed[key].get
+            return fn.apply(this);
           },
           set(){}
         })  

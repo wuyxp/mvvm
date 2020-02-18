@@ -16,7 +16,6 @@
    node2Fragment(el){
     const fragment = document.createDocumentFragment();
     let child;
-    // TODO 这里不理解
     while(child = el.firstChild){
       fragment.appendChild(child);
     }
@@ -126,6 +125,7 @@
      }
    },
    // TODO get和set看不懂
+   // data.a.b.d = 'a'
    _getVMVal(vm, exp){
      let val = vm;
      exp = exp.split('.');
